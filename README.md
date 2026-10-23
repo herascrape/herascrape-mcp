@@ -63,39 +63,38 @@ click (OAuth); no key to copy.
   }
   ```
 
-### Local — `npx`, with an API key
+### Local (stdio-only hosts) — run the bridge from source
 
-For hosts that only run local (stdio) servers. Needs Node ≥ 18.
+Only needed for hosts that cannot connect to a remote MCP server. The bridge is
+a thin stdio-to-HTTP proxy to the hosted server: it forwards your API key as
+`x-api-key` and relays the live tool list and calls — it defines no tools of its
+own. It is not published to a package registry; clone and build it (Node ≥ 18):
 
-- **Claude Code:**
+```sh
+git clone https://github.com/herascrape/herascrape-mcp && cd herascrape-mcp
+npm install && npm run build
+```
 
-  ```sh
-  claude mcp add herascrape --env HERASCRAPE_API_KEY=your_key -- npx -y herascrape-mcp
-  ```
+Then point your client at the built entry, with an API key from your
+[dashboard](https://herascrape.com):
 
-- **Claude Desktop / Cursor** (`claude_desktop_config.json` / `.cursor/mcp.json`):
-
-  ```json
-  {
-    "mcpServers": {
-      "herascrape": {
-        "command": "npx",
-        "args": ["-y", "herascrape-mcp"],
-        "env": { "HERASCRAPE_API_KEY": "your_key" }
-      }
+```json
+{
+  "mcpServers": {
+    "herascrape": {
+      "command": "node",
+      "args": ["/abs/path/to/herascrape-mcp/dist/index.js"],
+      "env": { "HERASCRAPE_API_KEY": "your_key" }
     }
   }
-  ```
-
-The local bridge is a thin stdio-to-HTTP proxy to the hosted server: it forwards
-your key as `x-api-key` and relays the live tool list and calls. It defines no
-tools of its own.
+}
+```
 
 ## Configuration
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
-| `HERASCRAPE_API_KEY` | — | Sent as `x-api-key`. Required for the local bridge. |
+| `HERASCRAPE_API_KEY` | — | Sent as `x-api-key`. Required when running the bridge from source. |
 | `HERASCRAPE_MCP_URL` | `https://herascrape.com/mcp` | Override the server URL (e.g. staging). |
 
 ## License
