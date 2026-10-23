@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.herascrape/herascrape-mcp",
+  "title": "herascrape",
+  "description": "Instagram data over MCP: profiles, posts, reels, stories, highlights and search as JSON",
+  "version": "0.1.0",
+  "websiteUrl": "https://herascrape.com",
+  "repository": {
+    "url": "https://github.com/herascrape/herascrape-mcp",
+    "source": "github",
+    "id": "1428988659"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://herascrape.com/mcp"
+    }
+  ]
+}
