@@ -26,7 +26,7 @@
     "node": ">=18"
   },
   "bin": {
-    "herascrape-mcp": "./dist/index.js"
+    "herascrape-mcp": "dist/index.js"
   },
   "files": [
     "dist"
