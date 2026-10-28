@@ -12,7 +12,7 @@ directly: no scraping code, no browser, no login.
 Every endpoint is one tool, generated from the live API, so the tool list never
 drifts from what the server serves. It is read-only, cursor-paginated, and flat
 **$0.0004 per successful call** (only 2xx is billed). Powered by the
-[herascrape](https://herascrape.com) Instagram API; to call it from code instead,
+[herascrape](https://herascrape.com/?utm_source=github&utm_medium=readme&utm_campaign=herascrape-mcp) Instagram API; to call it from code instead,
 use the [Python & TypeScript client](https://github.com/herascrape/herascrape).
 
 ## What agents can do with it
@@ -46,7 +46,7 @@ run agents. For clients with native one-click install:
 [![Add to Goose](https://img.shields.io/badge/Add_to_Goose-0b1220?style=flat-square)](goose://extension?url=https%3A%2F%2Fherascrape.com%2Fmcp&type=streamable_http&id=herascrape&name=herascrape&description=herascrape)
 
 Get an API key (or sign in to authorize in-browser) from your
-[herascrape dashboard](https://herascrape.com).
+[herascrape dashboard](https://herascrape.com/?utm_source=github&utm_medium=readme&utm_campaign=herascrape-mcp).
 
 ## Manual install
 
@@ -71,7 +71,7 @@ click (OAuth); no key to copy.
 For hosts that only run local (stdio) servers (Node ≥ 18). The bridge is a thin
 stdio-to-HTTP proxy to the hosted server: it forwards your API key as
 `x-api-key` and relays the live tool list and calls; it defines no tools of its
-own. Get a key from your [dashboard](https://herascrape.com).
+own. Get a key from your [dashboard](https://herascrape.com/?utm_source=github&utm_medium=readme&utm_campaign=herascrape-mcp).
 
 - **Claude Code:**
 
