@@ -11,7 +11,8 @@ directly: no scraping code, no browser, no login.
 
 Every endpoint is one tool, generated from the live API, so the tool list never
 drifts from what the server serves. It is read-only, cursor-paginated, and flat
-**$0.0004 per successful call** (only 2xx is billed). Powered by the
+**$0.0004 per successful call** (only 2xx is billed; the media resolver,
+oEmbed and the balance check are free). Powered by the
 [herascrape](https://herascrape.com/?utm_source=github&utm_medium=readme&utm_campaign=herascrape-mcp) Instagram API; to call it from code instead,
 use the [Python & TypeScript client](https://github.com/herascrape/herascrape).
 
@@ -26,8 +27,8 @@ use the [Python & TypeScript client](https://github.com/herascrape/herascrape).
 - **Discovery:** hashtag top / recent / reels; a location's top & recent
   media; trending audio and the clips using a given audio track.
 - **Search:** users, hashtags, audio, places, and a universal "top" search.
-- **Utilities:** resolve a shortcode or URL to a media id, oEmbed a post, and
-  check your live balance.
+- **Utilities:** convert between a shortcode and a media id, oEmbed a post,
+  and check your live balance.
 
 Agents reach for these when a task needs *what's actually on Instagram right
 now*: audience research, competitor and campaign tracking, influencer
